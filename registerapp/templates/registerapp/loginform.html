@@ -1,0 +1,39 @@
+{% extends 'mainsite/base.html' %} {% load static %} {% block title %} Log in {% endblock title %} {% block css %}
+<link href={% static 'css/form.css' %} rel="stylesheet">
+
+<style>
+  .errorlist {
+    margin: 0;
+
+    padding: 0;
+
+    color: crimson;
+    font-size: 15px;
+
+    list-style-position: inside;
+  }
+  
+</style>
+
+{% endblock css %} {% block content %}
+
+<div class="form-wrapper">
+  <h2>Sign In</h2>
+
+  {% if fail == 'userid' %}
+  <p class="errorlist">please fill correct {{fail}} and passward</p>
+
+  {% endif %} {% if fail == 'passward' %}
+  <p class="errorlist">please fill correct {{fail}}</p>
+
+  {% endif %}
+  <form action="" method="POST" novalidate>
+    {% csrf_token %}
+    <table>
+      {{loginform}}
+    </table>
+    <input type="submit" value="Sign In" class="submit" />
+  </form>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>{% block title %}home{% endblock title %}</title>
+    
+    
+    <link href={% static 'css/base.css' %} rel="stylesheet" />
+    
+    {% block css %}
+    {% endblock css %}
+  </head>
+  <body>
+ 
+    <nav class="menu-bar header">
+     
+      <ul>
+        <li>
+          <a href="#">HOME</a>
+        </li>
+        <li>
+          <a href="#">SERVICE</a>
+          <div class="sub-menu">
+            <ul>
+              <li><a href="#">WEB DEVELOPMENT</a></li>
+              <li><a href="#">ANDROID</a></li>
+               <li><a href="#">APP DEVELOPMENT</a></li>
+            </ul>
+          </div> 
+        </li>
+        <li>
+          <a href="#">ABOUT</a>
+           
+        </li>
+        <li>
+          <a href="/user/signup">Sign Up</a>
+        </li>
+        <li>
+          <a href='/user/login'>Sign In</a>
+        
+          </div> 
+        </li>
+       
+      </ul>
+    </nav>
+    {% block content %}
+    
+    {% endblock  %}
+  
+
+
+ 
+ 
+
+  </body>
+</html>

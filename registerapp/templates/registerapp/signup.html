@@ -1,0 +1,100 @@
+{% extends 'mainsite/base.html' %}  {% load static %} {% block title %} Sign Up {% endblock title %}
+{% block css %}
+<!-- <link href={% static 'css/form.css' %} rel="stylesheet"> -->
+<style>
+ .errorlist {
+
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+  color: crimson;
+  font-size: 15px;
+  list-style-position: inside;
+}
+
+  body {
+ 
+    text-align: center;
+    background: black no-repeat url({% static 'images/about-shape1-fac27986c9fb7e892a8553d61b77e416.png' %}) ;
+    
+  }
+
+
+  .form-wrapper {
+    background-color:darkgray;
+    /* background: no-repeat {% static 'images/about-shape1-fac27986c9fb7e892a8553d61b77e416.png' %} ; */
+    color:black;
+    border-radius: 20px;
+    position: relative;
+    width: 30%; 
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8%;
+
+    padding: 20px 50px 30px 50px;
+  }
+  table {
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+
+  .submit {
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+
+    width: 50%;
+    margin-top: 30px;
+    margin-bottom: 0;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  tr td .errorlist,tr td,t{ 
+    position: relative;
+    top: -10px;
+   
+  }
+
+ 
+</style>
+
+{% endblock css %} {% block content %}
+<div class="form-wrapper">
+  {% if success %}
+  <p style="color: limegreen; font-size: 20px">
+    Thank you {{userid}} ! for registering with us<br />
+    click <a href="../login">here</a> to log in
+  </p>
+  {% endif %} {% if exist == 'userid' %}
+  <p class="errorlist" style="font-size: 20px">this userid is not available</p>
+  {% endif %} {% if exist == 'email' %}
+  <p class="errorlist" style="font-size: 20px">
+    This email or userid already in used <br />
+    click <a style="color: skyblue;" href="../login">here</a> to log in
+  </p>
+  {% endif %}
+  <h1>Sign Up Form</h1>
+
+  {% if form.errors %}
+  <p class="errorlist" style="font-size: 20px">
+    Please correct following errors !
+  </p>
+  {% endif %} {% if notmatch %}
+  <p class="errorlist" style="font-size: 20px">Passward didn't match</p>
+  <br />
+  {% endif %}
+  <br />
+  <form action="" method="POST" novalidate>
+    {% csrf_token %}
+    <table>
+      {{form}}
+    </table>
+    <input class="submit" type="submit" value="Sign Up" />
+  </form>
+</div>
+
+{% endblock content %}

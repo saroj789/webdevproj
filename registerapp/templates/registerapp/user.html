@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>user special</title>
+    <style>
+      body {
+        text-align: center;
+        background-color: coral;
+      }
+      button {
+        width: 150px;
+        height: 50px;
+        background-color: cyan;
+        border-radius: 5px;
+      }
+      a {
+        text-decoration: none;
+        font-size: 20px;
+        color: b;
+      }
+
+      table {
+        width: 500px;
+        height: 400px;
+        margin: auto;
+        margin-top: 30px;
+        margin-bottom: 50px;
+        background-color: burlywood;
+        padding: 50px;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h5>for logged in user only</h5>
+      <h3>Welcome {{user.userid}} to your home feed <br /></h3>
+
+     
+      <table>
+        <caption><h2>Your Biodata</h2></caption>
+        
+        <tr>
+          <th>Name   :</th>
+          <td>{{user.name }}</td>
+        </tr>
+        <tr>
+          <th>UserID   :</th>
+          <td>{{user.userid }}</td>
+        </tr>
+        <tr>
+          <th>Email   :</th>
+          <td>{{user.email }}</td>
+        </tr>
+        <tr>
+          <th>Phone   :</th>
+          <td>{{user.phone }}</td>
+        </tr>
+      </table>
+    </div>
+
+    <button type="button" value="Log out">
+      <a href=""><strong>Log out</strong></h4></a>
+    </button>
+  </body>
+</html>
