@@ -1,0 +1,72 @@
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+body {
+    background: url("../images/bg.jpg");
+    background-size: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
+
+.menu-bar {
+    text-align: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: rgb(47, 54, 119);
+    opacity: 0.5;
+  }
+
+.menu-bar ul {
+    list-style: none;
+    color: white;
+    width: 80%;
+    position: relative;
+    top: -15px;
+    left: 60px;
+  }
+.menu-bar ul li {
+    float: left;
+    /* display: inline-block; */
+    width: 20%;
+    text-align: center;
+  
+    line-height: 50px;
+    height: 45px;
+    font-size: 24px;
+    margin-bottom: -15px;
+  }
+
+  .menu-bar ul li a,
+  .sub-menu ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .menu-bar ul li:hover,
+  .sub-menu ul li:hover {
+    background-color: rgb(40, 214, 49);
+    border-radius: 3px;
+  }
+  .sub-menu ul {
+    margin: 10px;
+    position: relative;
+    left: -50px;
+  }
+  
+  .sub-menu ul li {
+    background-color: rgba(0, 0, 0, 0.712);
+    display: block;
+    width: 246px;
+    margin: 0px;
+  }
+  .sub-menu {
+    display: none;
+  }
+  .menu-bar ul li:hover .sub-menu {
+    display: block;
+  }
+  

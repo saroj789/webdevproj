@@ -2,15 +2,15 @@
 {% block css %}
 <!-- <link href={% static 'css/form.css' %} rel="stylesheet"> -->
 <style>
- .errorlist {
+  .errorlist {
 
-  margin: 0;
-  padding: 0;
-  margin-top: 10px;
-  color: crimson;
-  font-size: 15px;
-  list-style-position: inside;
-}
+      margin: 0;
+      padding: 0;
+      margin-top: 10px;
+      color: crimson;
+      font-size: 15px;
+      list-style-position: inside;
+  } 
 
   body {
  
@@ -26,7 +26,7 @@
     color:black;
     border-radius: 20px;
     position: relative;
-    width: 30%; 
+    width: 40%; 
 
     margin-left: auto;
     margin-right: auto;
@@ -65,29 +65,35 @@
 {% endblock css %} {% block content %}
 <div class="form-wrapper">
   {% if success %}
-  <p style="color: limegreen; font-size: 20px">
+   <p style="color: limegreen; font-size: 20px">
     Thank you {{userid}} ! for registering with us<br />
     click <a href="../login">here</a> to log in
-  </p>
-  {% endif %} {% if exist == 'userid' %}
-  <p class="errorlist" style="font-size: 20px">this userid is not available</p>
-  {% endif %} {% if exist == 'email' %}
-  <p class="errorlist" style="font-size: 20px">
+   </p>
+  {% endif %} 
+
+  {% if exist == 'userid' %}
+   <p class="errorlist" style="font-size: 20px">this userid is not available</p>
+   {% endif %} {% if exist == 'email' %}
+   <p class="errorlist" style="font-size: 20px">
     This email or userid already in used <br />
     click <a style="color: skyblue;" href="../login">here</a> to log in
-  </p>
+   </p>
   {% endif %}
+
   <h1>Sign Up Form</h1>
 
   {% if form.errors %}
-  <p class="errorlist" style="font-size: 20px">
+   <p class="errorlist" style="font-size: 20px">
     Please correct following errors !
-  </p>
-  {% endif %} {% if notmatch %}
-  <p class="errorlist" style="font-size: 20px">Passward didn't match</p>
-  <br />
+   </p>
+  {% endif %}
+
+  {% if notmatch %}
+   <p class="errorlist" style="font-size: 20px">Passward didn't match</p>
+   <br />
   {% endif %}
   <br />
+  
   <form action="" method="POST" novalidate>
     {% csrf_token %}
     <table>
