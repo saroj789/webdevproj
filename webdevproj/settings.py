@@ -12,8 +12,10 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+
 import django_heroku
 django_heroku.settings(locals())
+DISABLE_COLLECTSTATIC=1
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -132,5 +134,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_DIR= os.path.join(BASE_DIR,STATIC_URL)
 STATICFILES_DIR=[STATIC_DIR]
-
 
