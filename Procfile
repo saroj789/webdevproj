@@ -1,2 +1,1 @@
-
-web: python loguser/manage.py runserver 0.0.0.0:$PORT
+web: gunicorn webdevproj.wsgi:application --log-file -
