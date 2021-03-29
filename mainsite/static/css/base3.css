@@ -1,0 +1,11 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+  }
+  
+  body {
+    background: url("../images/bg.jpg");
+    background-size: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
